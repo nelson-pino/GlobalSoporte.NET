@@ -3,26 +3,34 @@
 @{
     ViewBag.Title = "Gestion de Usuarios";
 }
-<h2>Gestion de Usuarios de la Aplicación</h2>
-<p>@Html.ActionLink("Crear Usuario", "Create")</p>
+<h2><img src="~/Images/users.png" alt="Foto de Usuarios" height="40" width="45" />  Gestion de Usuarios de la Aplicación  </h2>
+<p><img src="~/Images/add_users.png" alt="add users" />  @Html.ActionLink("Crear Usuario", "Create")  </p>
 
 <table class="table">
     <tr>
-        <th>@Html.DisplayForModel()</th>
+        <th>Codigo</th>
+        <th>Nombre Usuario</th>
+        <th>Departamento</th>
+        <th>Cargo</th>
+        <th>Rol</th>
+        <th>Acción Menú</th>
     </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.UserId)</td>
+    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+    <td>@Html.DisplayFor(modelItem => item.Departamento)</td>
+    <td>@Html.DisplayFor(modelItem => item.Cargo)</td>
+    <td>@Html.DisplayFor(modelItem => item.Role)</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+    </td>
+</tr>
+    }
 </table>
+<strong>Numero de Registro: </strong>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.UserId)</td>
-        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-        <td>@Html.DisplayFor(modelItem => item.Role)</td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
-        </td>
-    </tr>
-}
 
