@@ -1,0 +1,28 @@
+﻿@model List<GlobalSoporte.NET.Models.Users>
+
+@{
+    ViewBag.Title = "Gestion de Usuarios";
+}
+<h2>Gestion de Usuarios de la Aplicación</h2>
+<p>@Html.ActionLink("Crear Usuario", "Create")</p>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayForModel()</th>
+    </tr>
+</table>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.UserId)</td>
+        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+        <td>@Html.DisplayFor(modelItem => item.Role)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+        </td>
+    </tr>
+}
+
