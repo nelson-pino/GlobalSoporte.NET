@@ -24,10 +24,11 @@
     <td>@Html.DisplayFor(modelItem => item.Cargo)</td>
     <td>@Html.DisplayFor(modelItem => item.Role)</td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+        <span class="glyphicon glyphicon glyphicon-pencil"></span> @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+        <span class="glyphicon glyphicon glyphicon-info-sign"></span> @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+        <span class="glyphicon glyphicon glyphicon-trash"></span> @Html.ActionLink("Delete", "Delete", new { id = item.UserId }) 
     </td>
+    
 </tr>
     }
 </table>
