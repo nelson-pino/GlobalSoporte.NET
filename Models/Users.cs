@@ -15,5 +15,7 @@ namespace GlobalSoporte.NET.Models
         public string Departamento { get; set; }
         public string MapId { get; set; }
         public string Role { get; set; }
+        public string Correo { get; set; }
+        public string Password { get; set; }
     }
 }
